@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>uvone_bringup</name>
+  <version>0.1.0</version>
+  <description>
+    The uvone_robot_bringup package.
+  </description>
+  <maintainer email="theverbat@gmail.com">Rafael Martin</maintainer>
+  <license>BSD</license>
+  <author email="theverbat@gmail.com">Rafael Martin</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_door_msgs</build_depend>
+  <build_depend>uvone_msgs</build_depend>
+  <build_depend>kobuki_msgs</build_depend>
+
+  <exec_depend>sensor_door_msgs</exec_depend>
+  <exec_depend>uvone_msgs</exec_depend>
+  <exec_depend>kobuki_msgs</exec_depend>
+
+  <export/>
+</package>

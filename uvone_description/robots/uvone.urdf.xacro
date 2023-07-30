@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<robot name="uvone" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- INCLUDES -->
+  <xacro:include filename="$(find kobuki_description)/urdf/kobuki.urdf.xacro" />
+  <xacro:include filename="$(find uvone_description)/urdf/rplidar.urdf.xacro" />
+  <xacro:include filename="$(find uvone_description)/urdf/astra.urdf.xacro" />
+  <xacro:include filename="$(find uvone_description)/urdf/eyefish_camera.urdf.xacro" />
+
+  <!-- KOBUKI BASE -->
+  <xacro:kobuki/>
+
+  <!-- LIGHT STRUCTURE -->
+  <joint name="structure_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="structure_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0" />
+  </joint>
+  <link name="structure_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://uvone_description/meshes/alpha.stl" scale="0.0010 0.0010 0.0010"/>
+      </geometry>
+      <origin xyz="-0.355 -0.235 0.045" rpy="1.570796272 0 1.570796272"/>
+      <material name="black">
+        <color rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+  </link>
+
+  <!-- SENSORS -->
+  <xacro:rplidar parent="base_link" name="front_laser">
+    <origin xyz="0.110 0 0.160" rpy="0 3.1415926536 0" />
+  </xacro:rplidar>
+  <xacro:sensor_astra parent="base_link" name="front_camera">
+    <origin xyz="0.012 0.010 1.320" rpy="0 0.40 0" /> <!-- first: 0.718, second: 1.358 -->
+  </xacro:sensor_astra>
+  <xacro:eyefish_camera parent="base_link" name="front_wide_camera">
+    <origin xyz="0.012 0.0 1.270" rpy="0 0 0" />
+  </xacro:eyefish_camera>
+  <xacro:eyefish_camera parent="base_link" name="rear_wide_camera">
+    <origin xyz="-0.012 0.0 1.270" rpy="0 0 3.1415926536" />
+  </xacro:eyefish_camera>
+</robot>

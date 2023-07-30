@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="server_required" value="true"/>
+    <arg name="gui_required" value="true"/>
+    <arg name="world_name" value="$(find uvone_gazebo)/worlds/willowgarage.world"/>
+    <arg name="verbose" value="true"/>
+  </include>
+  <include file="$(find uvone_description)/launch/description.launch"/>
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model uvone" respawn="false" output="screen"/>
+
+</launch>

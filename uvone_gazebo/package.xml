@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model
+    href="http://download.ros.org/schema/package_format3.xsd"
+    schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>uvone_gazebo</name>
+  <version>0.9.0</version>
+  <description>
+    Gaze
+  </description>
+  <maintainer email="theverbat@gmail.com">Rafael Martin</maintainer>
+  <license>BSD</license>
+  <build_depend>catkin</build_depend>
+
+  <depend>gazebo_ros</depend>
+  <exec_depend>gazebo</exec_depend>
+  <export>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>

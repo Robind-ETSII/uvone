@@ -1,0 +1,22 @@
+<launch>
+  <!-- ROBOT -->
+  <include file="$(find uvone_bringup)/launch/include/minimal.launch.xml" />
+  <include file="$(find uvone_bringup)/launch/include/lamps.launch.xml" />
+  
+  <!-- SENSORS -->
+  <include file="$(find uvone_bringup)/launch/include/sensors/rplidar.launch.xml">
+    <arg name="device" value="/dev/rplidar" />
+    <arg name="frame_id" value="front_laser_link" />
+  </include>
+  <include file="$(find uvone_bringup)/launch/include/sensors/astra.launch.xml">
+    <arg name="camera" value="front_camera" />
+  </include>
+  <include file="$(find uvone_bringup)/launch/include/sensors/eyefish.launch.xml">
+    <arg name="device" value="/dev/video_front" />
+    <arg name="camera_name" value="front_wide_camera" />
+  </include>
+  <include file="$(find uvone_bringup)/launch/include/sensors/eyefish.launch.xml">
+    <arg name="device" value="/dev/video6" />
+    <arg name="camera_name" value="rear_wide_camera" />
+  </include>
+</launch>

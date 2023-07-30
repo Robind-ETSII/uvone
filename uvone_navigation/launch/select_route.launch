@@ -1,0 +1,10 @@
+<launch>
+    <arg name="file" default="$(find uvone_robot_navigation)/paths/default.txt" />
+    
+    <node name="command_writer" pkg="uvone_robot_navigation" type="command_writer" output="screen">
+        <param name="path_filename" value="$(arg file)" />
+
+        <!-- <remap from="~feedback" to=""/> -->
+        <remap from="~goal" to="/move_base_simple/goal"/> -->
+    </node>
+</launch>
