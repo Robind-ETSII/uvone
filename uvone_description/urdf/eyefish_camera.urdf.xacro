@@ -11,7 +11,7 @@
     <gazebo reference="${name}_link">
       <sensor name="${name}_eyefish_sensor" type="camera">
         <pose>0 0 0 0 0 0</pose>
-        <visualize>true</visualize>
+        <visualize>false</visualize>
         <update_rate>30.0</update_rate>
         <camera>
           <horizontal_fov>2.3962634</horizontal_fov>
