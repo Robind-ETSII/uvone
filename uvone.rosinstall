@@ -1,13 +1,13 @@
 ---
 repositories:
-  src/uvone:
+  src/ds4_driver:
     type: git
-    url: https://github/Rodind-ETSII/uvone.git
-    version: melodic
+    url: https://github.com/Robind-ETSII/ds4_driver.git
+    version: melodic-devel
   src/kobuki:
     type: git
     url: https://github.com/Rodind-ETSII/kobuki.git
-    version: 0.7.6
+    version: melodic
   src/kobuki_core:
     type: git
     url: https://github.com/Robind-ETSII/kobuki_core.git
@@ -23,32 +23,16 @@ repositories:
   src/ros_astra_camera:
     type: git
     url: https://github.com/Robind-ETSII/ros_astra_camera.git
-    version: melodic
-# src/uvone:
-#   type: git
-#   url: https://github.com/Robind-ETSII/uvone.git
-#   version: melodic
-  src/kobuki:
-    type: git
-    url: https://github.com/yujinrobot/kobuki.git
-    version: melodic
-  src/kobuki_core:
-    type: git
-    url: https://github.com/yujinrobot/kobuki_core.git
-    version: melodic
-  src/kobuki_msgs:
-    type: git
-    url: https://github.com/yujinrobot/kobuki_msgs.git
-    version: melodic
-  src/ds4_driver:
-    type: git
-    url: https://github.com/naoki-mizuno/ds4_driver.git
-    version: melodic-devel
-  src/ros_astra_camera:
-    type: git
-    url: https://github.com/orbbec/ros_astra_camera.git
-    version: 0.2.2
+    version: 05ce57b20bfe07d82c447f22a069f6bf3e630d7d
   src/ros_astra_launch:
     type: git
-    url: https://github.com/orbbec/ros_astra_launch.git
-    version: 0.2.2
+    url: https://github.com/Robind-ETSII/ros_astra_launch.git
+    version: master
+  src/sensor_door:
+    type: git
+    url: https://github.com/Robind-ETSII/sensor_door.git
+    version: trunk
+  src/uvone:
+    type: git
+    url: https://github/Rodind-ETSII/uvone.git
+    version: main
