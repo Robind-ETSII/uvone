@@ -1,12 +1,20 @@
 <launch>
+  <!-- GAZEBO -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="server_required" value="true"/>
     <arg name="gui_required" value="true"/>
     <arg name="world_name" value="$(find uvone_gazebo)/worlds/willowgarage.world"/>
     <arg name="verbose" value="true"/>
   </include>
-  <include file="$(find uvone_description)/launch/description.launch"/>
 
+  <!-- SPAWN ROBOT -->
+  <include file="$(find uvone_description)/launch/description.launch"/>
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model uvone" respawn="false" output="screen"/>
 
+  <!-- LASER FILTER -->
+  <node pkg="laser_filters" type="scan_to_scan_filter_chain" name="laser_filter">
+    <rosparam command="load" file="$(find uvone_bringup)/config/sensors/laser_filter.yaml" />
+    <remap from="scan" to="/front_laser/scan" />
+    <remap from="scan_filtered" to="/front_laser/scan_filtered" />
+  </node>
 </launch>
