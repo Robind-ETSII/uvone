@@ -10,7 +10,7 @@
   </description>
   <maintainer email="theverbat@gmail.com">Rafael Martin</maintainer>
   <license>BSD</license>
-  <build_depend>catkin</build_depend>
+  <buildtool_depend>catkin</buildtool_depend>
 
   <depend>gazebo_ros</depend>
   <exec_depend>gazebo</exec_depend>
